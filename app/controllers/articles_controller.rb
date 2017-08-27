@@ -5,10 +5,14 @@ class ArticlesController < ApplicationController
   end
   
   def show
+    @comment = Comment.new
+    # I don't know why we use `.new` instead of `@article.comments.new`
+    @comment.article_id = @article.id
   end
   
   def new
     @article = Article.new
+    @comment = Comment.new
   end
   
   def create

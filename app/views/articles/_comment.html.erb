@@ -3,4 +3,8 @@
   <p class='comment'>
     <%= comment.body %>
   </p>
+  <p>
+    Posted <%= distance_of_time_in_words(comment.article_id.created_at, 
+      comment.created) %> later
+  </p>
 </div>
