@@ -7,6 +7,8 @@ class ArticlesController < ApplicationController
   def show
     @comment = Comment.new
     # I don't know why we use `.new` instead of `@article.comments.new`
+    # bc then we'd have to call save as well here which is preferably done in the
+    # appropriate controller?
     @comment.article_id = @article.id
   end
   
